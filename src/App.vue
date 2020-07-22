@@ -1,17 +1,51 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="row">
+      <div class="col s12">
+        <img :src="url_imagen" alt="">
+      </div>  
+    </div>
+    <div class="row">
+      <div class="col s4"></div>
+      <div class="col s4">
+        <div class="card">
+            
+            <div class="card-content">
+              <div class="row">
+              <div class="col s6">
+                <button class="waves-effect waves-light btn-large grey lighten-5 grey-text" @click="cambiar_ninja">NINJA</button>
+              </div>
+              <div class="col s6">
+                <button class="waves-effect waves-light btn-large grey lighten-5 grey-text" @click="cambiar_gato">GATO</button>
+              </div>
+            </div>
+          </div>
+        </div>      
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+const ninja_img = './assets/ninja.png';
+const gato_img = './assets/gato.png'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  data: function(){
+    return {
+      url_imagen: ninja_img
+    }
+  },
+  methods: {
+    cambiar_ninja(){
+      this.url_imagen = ninja_img
+      //alert('cambiar a ninja')
+    },
+    cambiar_gato(){
+      this.url_imagen = gato_img
+      alert('cambiar a gato')
+    }
   }
 }
 </script>
